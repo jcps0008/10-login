@@ -1,0 +1,3 @@
+sonar.projectKey=mi-proyecto-spring
+sonar.host.url=http://localhost:9000
+

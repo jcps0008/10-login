@@ -1,0 +1,905 @@
+{
+	"info": {
+		"_postman_id": "11239b46-cbe2-411a-90c2-1dd54cf8fe50",
+		"name": "CrudValidation",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "39871368"
+	},
+	"item": [
+		{
+			"name": "Person",
+			"item": [
+				{
+					"name": "newPerson",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"username\": \"xarly_jc17\",\r\n  \"password\": \"erre1234\",\r\n  \"name\": \"Xarly\",\r\n  \"surname\": \"Perez\",\r\n  \"company_email\": \"josenter@erre.es\",\r\n  \"personal_email\": \"josecarlos@gmail.com\",\r\n  \"city\": \"Granada\",\r\n  \"active\": true,\r\n  \"created_date\": \"2024-12-24\",\r\n  \"imagen_url\": \"https://static.wikia.nocookie.net/el-mundo-de-cars/images/b/b9/RayoMcQueenLengua.png/revision/latest?cb=20240621032450&path-prefix=es\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/person",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"person"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getIdPerson",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/person/1?outputType=simple",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"person",
+								"1"
+							],
+							"query": [
+								{
+									"key": "outputType",
+									"value": "full",
+									"disabled": true
+								},
+								{
+									"key": "outputType",
+									"value": "simple"
+								},
+								{
+									"key": "outputType",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getUsername",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/person/username/Joseeee",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"person",
+								"username",
+								"Joseeee"
+							],
+							"query": [
+								{
+									"key": "outputType",
+									"value": "simple",
+									"disabled": true
+								},
+								{
+									"key": "outputType",
+									"value": "full",
+									"disabled": true
+								},
+								{
+									"key": "outputType",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAllPersons",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/person",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"person"
+							],
+							"query": [
+								{
+									"key": "outputType",
+									"value": "simple",
+									"disabled": true
+								},
+								{
+									"key": "outputType",
+									"value": "full",
+									"disabled": true
+								},
+								{
+									"key": "outputType",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updatePerson",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"username\": \"Xarlyyyy\",\r\n  \"password\": \"erre1234\",\r\n  \"name\": \"Xarly\",\r\n  \"surname\": \"Perez\",\r\n  \"company_email\": \"jose.nter@nter.es\",\r\n  \"personal_email\": \"josecarlos@gmail.com\",\r\n  \"city\": \"Granada\",\r\n  \"active\": true,\r\n  \"created_date\": \"2024-10-12\",\r\n  \"imagen_url\": \"https://static.wikia.nocookie.net/el-mundo-de-cars/images/b/b9/RayoMcQueenLengua.png/revision/latest?cb=20240621032450&path-prefix=es\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/person/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"person",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deletePerson",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/person/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"person",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Student",
+			"item": [
+				{
+					"name": "newStudent",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id_person\": 1,\r\n    \"id_professor\": null,\r\n    \"num_hours_week\": 40,\r\n    \"comments\": \"Can't work in the afternoons\",\r\n    \"branch\": \"FRONT\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/student",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"student"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getIdStudent",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/student/1?outputType=full",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"student",
+								"1"
+							],
+							"query": [
+								{
+									"key": "outputType",
+									"value": "simple",
+									"disabled": true
+								},
+								{
+									"key": "outputType",
+									"value": "full"
+								},
+								{
+									"key": "outputType",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAllStudents",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/student?outputType=full",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"student"
+							],
+							"query": [
+								{
+									"key": "outputType",
+									"value": "simple",
+									"disabled": true
+								},
+								{
+									"key": "outputType",
+									"value": "full"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateStudent",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id_person\": 1,\r\n    \"id_professor\": 1,    \r\n    \"num_hours_week\": 41,\r\n    \"comments\": \"Can't work in the afternoons\",\r\n    \"branch\": \"FRONT\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/student/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"student",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteStudent",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/student/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"student",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Subject",
+			"item": [
+				{
+					"name": "newSubject",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"subject\": \"Database \",\r\n  \"comments\": \"This subject deals with databases\",\r\n  \"initial_date\": \"2024-12-18\",\r\n  \"finish_date\": \"2024-12-20\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/subject",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"subject"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getIdSubject",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/subject/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"subject",
+								"1"
+							],
+							"query": [
+								{
+									"key": "outputType",
+									"value": "simple",
+									"disabled": true
+								},
+								{
+									"key": "outputType",
+									"value": "full",
+									"disabled": true
+								},
+								{
+									"key": "outputType",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAllSubjects",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/subject?outputType=full",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"subject"
+							],
+							"query": [
+								{
+									"key": "outputType",
+									"value": "simple",
+									"disabled": true
+								},
+								{
+									"key": "outputType",
+									"value": "full"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateSubject",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"subject\": \"Database 2\",\r\n  \"comments\": \"This subject deals with databases\",\r\n  \"initial_date\": \"2024-12-18\",\r\n  \"finish_date\": \"2024-12-20\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/subject/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"subject",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteSubject",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/subject/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"subject",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Professor",
+			"item": [
+				{
+					"name": "newProfessor",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id_person\": 2,\r\n  \"comments\": \"Professor's comment\",\r\n  \"branch\": \"BACK\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/professor",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"professor"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getIdProfessor",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/professor/1?outputType=full",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"professor",
+								"1"
+							],
+							"query": [
+								{
+									"key": "outputType",
+									"value": "full"
+								},
+								{
+									"key": "outputType",
+									"value": "simple",
+									"disabled": true
+								},
+								{
+									"key": "outputType",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAllProfessors",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/professor?outputType=full",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"professor"
+							],
+							"query": [
+								{
+									"key": "outputType",
+									"value": "simple",
+									"disabled": true
+								},
+								{
+									"key": "outputType",
+									"value": "full"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateProfessor",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id_person\": 2,\r\n    \"id_professor\": 5,\r\n    \"comments\": null,\r\n    \"branch\": \"BACK\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/professor/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"professor",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteProfessor",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/professor/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"professor",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "StudentSubject",
+			"item": [
+				{
+					"name": "getSubjectsByStudentId",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/student-subjects/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"student-subjects",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "assignSubjectsToStudent",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\r\n    1,\r\n    2,\r\n    3\r\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/student-subjects/1/assign",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"student-subjects",
+								"1",
+								"assign"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "unassignSubjectsFromStudent",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\r\n    1,\r\n    2,\r\n    7\r\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/student-subjects/1/unassign",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"student-subjects",
+								"1",
+								"unassign"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Part4",
+			"item": [
+				{
+					"name": "getProfessorById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/person/professor/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"person",
+								"professor",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getProfessorById Feign",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/person/professor/feign/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"person",
+								"professor",
+								"feign",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "newPerson 8081",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"username\": \"Joseeee 1\",\r\n  \"password\": \"erre1234\",\r\n  \"name\": \"Xarly\",\r\n  \"surname\": \"Perez\",\r\n  \"company_email\": \"josenter@erre.es\",\r\n  \"personal_email\": \"josecarlos@gmail.com\",\r\n  \"city\": \"Granada\",\r\n  \"active\": true,\r\n  \"created_date\": \"2024-12-24\",\r\n  \"imagen_url\": \"https://static.wikia.nocookie.net/el-mundo-de-cars/images/b/b9/RayoMcQueenLengua.png/revision/latest?cb=20240621032450&path-prefix=es\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/person",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"person"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "newProfessor 8081",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id_person\": 1,\r\n    \"comments\": \"Professor's comment\",\r\n    \"branch\": \"BACK\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/professor",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"professor"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "CriteriaBuilder",
+			"item": [
+				{
+					"name": "getPersonsByCriteria",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/person/search?name=Xarly&surname=Perez&username=xarly_jc17&page=0&size=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"person",
+								"search"
+							],
+							"query": [
+								{
+									"key": "fechaSuperior",
+									"value": "2022-01-01",
+									"disabled": true
+								},
+								{
+									"key": "orderBy",
+									"value": "username",
+									"disabled": true
+								},
+								{
+									"key": "name",
+									"value": "Xarly"
+								},
+								{
+									"key": "surname",
+									"value": "Perez"
+								},
+								{
+									"key": "username",
+									"value": "xarly_jc17"
+								},
+								{
+									"key": "page",
+									"value": "0"
+								},
+								{
+									"key": "size",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
